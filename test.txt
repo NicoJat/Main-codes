@@ -1,0 +1,10 @@
+Pontificia Universidad Catolica del Ecuador
+
+
+Programa para calcular el corte en zapatas rectangulares
+
+Autor: Nicolas Jativa
+Fecha: 19/03/2023
+Materia: Cimentaciones
+Profesor: Carlos Celi
+Tarea: numero 1
