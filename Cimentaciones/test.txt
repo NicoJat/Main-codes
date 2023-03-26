@@ -7,4 +7,41 @@ Autor: Nicolas Jativa
 Fecha: 19/03/2023
 Materia: Cimentaciones
 Profesor: Carlos Celi
-Tarea: numero 1
+Tarea: numero 2
+
+Tomar en cuenta que el codigo se ha venido trabajando hasta el dia 26 de marzo 2023.
+Los cambios efectuados fueron mayoritariamente sintaxis, importacion de libreria pandas y mejoramiento del bucle.
+
+
+
+# qq = [0,199]
+# Cortantefin1 = [np.delete(Cortanteactual,qq)]
+# Cortantefin20111 = [np.delete(Cortante2011,qq)]
+# dval1 = np.delete(dval,qq)
+
+# Cortantefin = np.min([Cortantefin1])
+# Cortantefin2011 = np.min([Cortantefin20111])
+
+# #Graficador
+# fig, ax = plt.subplots()
+# ax.plot(dval, Cortanteactual, label='Cortante ACI 318-19')
+# # ax.plot(dval, Cortante2011)
+# ax.set_xlabel('valores de d')
+# ax.set_ylabel('phiVc')
+# ax.set_title('Curva relación d y Vc')
+# # ax.legend()
+
+# plt.show()
+# #Fin Graficador
+
+
+
+# print(f'Vu1 es: {Vu1mat[0]} Ton')  #En toneladas@m
+# print(f'Vu2 es: {Vu2mat[0]} Ton')  #En toneladas@m
+# print(f'phiVc1 es: {phiVc1mat[0]} Ton')  #En toneladas@m
+# print(f'phiVc2 es: {phiVc2mat[0]} Ton')  #En toneladas@m
+# print(f'phiVc3 es: {phiVc3mat[0]} Ton')  #En toneladas@m
+# print(f'phiVc2011 es: {phiVc2011mat[0]} Ton')  #En toneladas@m
+# print(f'phiVcmax es: {phiVcmaxmat[0]} Ton')  #En toneladas@m
+# print(f'La carga de diseño al cortante es:  {Cortanteactual[0]} Ton') #En toneladas@m
+# print(f'La carga de diseño al cortante, según la ACI 2011 es:  {Cortante2011[0]} Ton') #En toneladas@m

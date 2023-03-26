@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	    <!-- header oficial: -->
+	    <meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <link rel="icon" href="../../../imagenes/cascologo.png" type="image/x-icon">
+	    <title>Estructuras Metalicas</title>
+	    <link rel="stylesheet" href="./stylesheet.css"/>
+	    <script src="./calcseccion.js" defer></script>
+	</head>
+
+
+	<body>
+		<h2 class="accordion-title" style="text-align: center;">Calculo de propiedades de la sección</h2><br>
+		
+		    <div class="accordion" id="perfiless">    
+		
+		        <div class="accordion-button">
+		            <a class="reveal-btn" href="#perfiltipoi"> <img src="./images/perfili.png" alt="" width="50px" height="50px"> </a>
+		            <a class="reveal-btn" href="#perfiltipoc"> <img src="./images/perfilc.png" alt="" width="50px" height="50px"> </a>
+		            <a class="reveal-btn" href="#perfiltipol"> <img src="./images/perfill.png" alt="" width="50px" height="50px"></a>
+		            <a class="reveal-btn" href="#perfilrectangularhueco"> <img src="./images/perfilcuad.png" alt="" width="50px" height="50px"> </a>
+		            <a class="reveal-btn" href="#perfiltipot"> <img src="./images/iconot-removebg-preview.png" alt="" width="50px" height="50px"></a>
+		            <a class="reveal-btn" href="#perfilohueco"> <img src="./images/perfilanill.png" alt="" width="50px" height="50px"></a>
+		            <a class="reveal-btn" href="#perfiltipoo"> <img src="./images/perfilcirc.png" alt="" width="50px" height="50px"></a>
+		            <a class="reveal-btn" href="#perfilrectangular"> <img src="./images/iconrectan-removebg-preview.png" alt="" width="50px" height="50px"></a>
+		        </div>
+		
+				<div class="author">
+					<p>Pontificia Universidad Católica del Ecuador</p>
+					<p>Autor: Nicolás Játiva</p>
+					<p>Fecha: 11/12/22</p>
+				</div>
+
+		        <div class="hidden-content" id="perfiltipoi">
+		            <div class="contenidoprop">
+		                <h3 class="titpropperfil">Perfil tipo I</h3>
+		                <div>
+		                    <img src="./images/Captura.PNG" class="imgperfil">
+		                </div>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir bf1:
+		                    <input type="number" class="formulario__input" id="bf1">  en cm. </label>
+		                </ul>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir bf2:
+		                    <input type="number" class="formulario__input" id="bf2">  en cm. </label>
+		                </ul>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir h:
+		                    <input type="number" class="formulario__input" id="hw">  en cm. </label>
+		                </ul>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir tf1:
+		                    <input type="number" class="formulario__input" id="tf1">  en cm. </label>
+		                </ul>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir tf2:
+		                    <input type="number" class="formulario__input" id="tf2">  en cm. </label>
+		                </ul>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir tw:
+		                    <input type="number" class="formulario__input" id="tw">  en cm. </label>
+		                </ul>
+		                    <button value="Calcular" onclick="seccioni()">Calcular</button>
+		            </div>
+		            <div class="resultpropsec">
+		                <p id="areabruti"> </p>
+		                <p id="centroidxi"> </p> 
+		                <p id="centroidyi"> </p>
+		                <p id="inerciaxi"> </p>
+		                <p id="inerciayi"> </p>
+		                <p id="inerciapi"> </p>
+		                <p id="rxi"> </p>
+		                <p id="ryi"> </p>
+		                <p id="x0i"> </p>
+		                <p id="y0i"> </p>
+		                <p id="cwi"> </p>
+		            </div>
+		        </div>
+		
+		
+		        
+		        <div class="hidden-content" id="perfiltipoc">
+		            <h3 class="titpropperfil">Perfil tipo C</h3>
+		            <div>
+		                <img src="./images/Capturac.PNG" class="imgperfil">
+		            </div>
+		            <div>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir a1:
+		                    <input type="number" class="formulario__input" id="a1">  en cm. </label>
+		                </ul>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir a2:
+		                    <input type="number" class="formulario__input" id="a2">  en cm. </label>
+		                </ul>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir a3:
+		                    <input type="number" class="formulario__input" id="a3">  en cm. </label>
+		                </ul>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir e1:
+		                    <input type="number" class="formulario__input" id="e1">  en cm. </label>
+		                </ul>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir e2:
+		                    <input type="number" class="formulario__input" id="e2">  en cm. </label>
+		                </ul>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir e3:
+		                    <input type="number" class="formulario__input" id="e3">  en cm. </label>
+		                </ul>
+		                <button value="Calcular" onclick="seccionc()">Calcular</button>
+		            </div>
+		            <div class="resultpropsec">
+		                <p id="areabrutc"> </p>
+		                <p id="centroidxc"> </p>
+		                <p id="centroidyc"> </p>
+		                <p id="inerciaxc"> </p>
+		                <p id="inerciayc"> </p>
+		                <p id="inerciapc"> </p> 
+		                <p id="rxc"> </p>
+		                <p id="ryc"> </p>
+		                <p id="x0c"> </p>
+		                <p id="y0c"> </p>
+		                <p id="cwc"> </p>
+		            </div>
+		        </div>
+		
+		
+		        
+		        <div class="hidden-content" id="perfiltipol">
+		            <h3 class="titpropperfil">Perfil tipo L</h3>
+		            <div>
+		                <img src="./images/Captural.PNG" class="imgperfil">
+		            </div>
+		            <div>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir a1:
+		                    <input type="number" class="formulario__input" id="a1l"> en cm. </label>
+		                </ul>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir a2:
+		                    <input type="number" class="formulario__input" id="a2l"> en cm. </label>
+		                </ul>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir e1:
+		                    <input type="number" class="formulario__input" id="e1l"> en cm. </label>
+		                </ul>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir e2:
+		                    <input type="number" class="formulario__input" id="e2l"> en cm. </label>
+		                </ul>
+		                <button value="Calcular" onclick="seccionl()">Calcular</button>
+		            </div>
+		            <div class="resultpropsec">
+		                <p id="areabrutl"> </p>
+		                <p id="centroidxl"> </p>
+		                <p id="centroidyl"> </p>
+		                <p id="inerciaxl"> </p>
+		                <p id="inerciayl"> </p>
+		                <p id="inerciapl"> </p>
+		                <p id="rxl"> </p>
+		                <p id="ryl"> </p>
+		                <p id="x0l"> </p>
+		                <p id="y0l"> </p>
+		                <p id="cwl"> </p>
+		            </div>
+		        </div>
+		
+		
+		        
+		        <div class="hidden-content" id="perfilrectangularhueco">
+		            <h3 class="titpropperfil">Perfil tipo rectangular hueco</h3>
+		            <div>
+		                <img src="./images/Capturarec.PNG" class="imgperfil">
+		            </div>
+		            <div>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir a1:
+		                    <input type="number" class="formulario__input" id="a1cuad">  en cm. </label>
+		                </ul>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir a2:
+		                    <input type="number" class="formulario__input" id="a2cuad">  en cm. </label>
+		                </ul>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir b1:
+		                    <input type="number" class="formulario__input" id="b1cuad">  en cm. </label>
+		                </ul>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir b2:
+		                    <input type="number" class="formulario__input" id="b2cuad">  en cm. </label>
+		                </ul>
+		                <button value="Calcular" onclick="seccioncuad()">Calcular</button>
+		            </div>
+		            <div class="resultpropsec">
+		                <p id="areabrutcuadhuec"> </p>
+		                <p id="centroidxcuad"> </p>
+		                <p id="centroidycuad"> </p>
+		                <p id="inerciaxcuad"> </p>
+		                <p id="inerciaycuad"> </p>
+		                <p id="inerciapcuad"> </p>
+		                <p id="rxcuad"> </p>
+		                <p id="rycuad"> </p>
+		            </div>
+		        </div>
+		
+		
+		        
+		        <div class="hidden-content" id="perfiltipot">
+		            <h3 class="titpropperfil">Perfil tipo T: </h3>
+		            <div>
+		                <img src="./images/secciont.png" class="imgperfil">
+		            </div>
+		            <div>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir bf:
+		                    <input type="number" class="formulario__input" id="bft">  en cm. </label>
+		                </ul>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir hw:
+		                    <input type="number" class="formulario__input" id="hwt">  en cm. </label>
+		                </ul>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir tf:
+		                    <input type="number" class="formulario__input" id="tft">  en cm. </label>
+		                </ul>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir tw:
+		                    <input type="number" class="formulario__input" id="twt">  en cm. </label>
+		                </ul>
+		                <p><input type="button" value="Calcular" onclick="secciont()"></p><br>
+		            </div>
+		            <div class="resultpropsec">
+		                <p id="areabrutt"> </p> 
+		                <p id="centroidxt"> </p> 
+		                <p id="centroidyt"> </p> 
+		                <p id="inerciaxt"> </p> 
+		                <p id="inerciayt"> </p> 
+		                <p id="inerciapt"> </p>
+		                <p id="rxt"> </p> 
+		                <p id="ryt"> </p>
+		                <p id="x0t"> </p>
+		                <p id="y0t"> </p>
+		                <p id="cwt"> </p> 
+		            </div>
+		        </div>
+		
+		
+		        
+		        <div class="hidden-content" id="perfilohueco">
+		            <h3 class="titpropperfil">Perfil tipo O hueco</h3>
+		            <div>
+		                <img src="./images/Capturao.PNG" class="imgperfil">
+		            </div>
+		            <div>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir D1:
+		                    <input type="number" class="formulario__input" id="d1o">  en cm. </label>
+		                </ul>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir D2:
+		                    <input type="number" class="formulario__input" id="d2o">  en cm. </label>
+		                </ul>
+		                <p><input type="button" value="Calcular" onclick="seccionohuec()"></p><br>
+		            </div>
+		            <div class="resultpropsec">
+		                <p id="areabrutohuec"> </p>
+		                <p id="centroidxohuec"> </p> 
+		                <p id="centroidyohuec"> </p>
+		                <p id="inerciaxohuec"> </p> 
+		                <p id="inerciayohuec"> </p> 
+		                <p id="inerciapohuec"> </p>
+		                <p id="rxohuec"> </p> 
+		                <p id="ryohuec"> </p>
+		            </div>
+		        </div>
+		
+		
+		        
+		        <div class="hidden-content" id="perfiltipoo">
+		            <h3 class="titpropperfil">Perfil tipo O</h3>
+		            <div>
+		                <img src="./images/Capturaoo.PNG" class="imgperfil">
+		            </div>
+		            <div>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir D:
+		                    <input type="number" class="formulario__input" id="doo">  en cm. </label>
+		                </ul>
+		                <p><input type="button" value="Calcular" onclick="secciono()"></p><br>
+		            </div>
+		            <div class="resultpropsec">
+		                <p id="areabrutoo"> </p>
+		                <p id="centroidxoo"> </p>
+		                <p id="centroidyoo"> </p>
+		                <p id="inerciaxoo"> </p>
+		                <p id="inerciayoo"> </p>
+		                <p id="inerciapoo"> </p>
+		                <p id="rxoo"> </p>
+		                <p id="ryoo"> </p>
+		            </div>
+		        </div>    
+		
+		
+		        
+		        <div class="hidden-content" id="perfilrectangular">
+		            <h3 class="titpropperfil">Perfil rectangular</h3>
+		            <div>
+		                <img src="./images/rectan.png" class="imgperfil">
+		            </div>
+		            <div>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir b:
+		                    <input type="number" class="formulario__input" id="b">  en cm. </label>
+		                </ul>
+		                <ul>
+		                    <label for="" class="formulario__label"> Introducir a:
+		                    <input type="number" class="formulario__input" id="a">  en cm. </label>
+		                </ul>
+		                <p><input type="button" value="Calcular" onclick="seccionrec()"></p><br>
+		            </div>
+		            <div class="resultpropsec">
+		                <p id="areabrutrectan"> </p>
+		                <p id="centroidxrectan"> </p>
+		                <p id="centroidyrectan"> </p>
+		                <p id="inerciaxrectan"> </p>
+		                <p id="inerciayrectan"> </p>
+		                <p id="inerciaprectan"> </p>
+		                <p id="rxrectan"> </p>
+		                <p id="ryrectan"> </p>
+		            </div>
+		        </div>
+        	</body>
+</html> 
+		       

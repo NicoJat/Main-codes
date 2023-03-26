@@ -1,0 +1,37 @@
+
+body {
+    background-color: lightblue;
+}
+
+.accordion-button {
+    background-color: whitesmoke;
+    text-align: center;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
+.hidden-content {
+    background-color: white;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 400px;
+    margin-right: 400px;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.hidden-content img {
+    width: 350px;
+    height: 350px;
+}
+
+.author {
+    margin: auto;
+    text-align: center;
+    padding: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
