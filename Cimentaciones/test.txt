@@ -9,8 +9,8 @@ Materia: Cimentaciones
 Profesor: Carlos Celi
 Tarea: numero 2
 
-Tomar en cuenta que el codigo se ha venido trabajando hasta el dia 26 de marzo 2023.
-Los cambios efectuados fueron mayoritariamente sintaxis, importacion de libreria pandas y mejoramiento del bucle.
+Hasta la fecha los cambios efectuados han sido en cuanto al avance del diseño, se ha logrado obtener el Asmin, 
+el H y "las dimensiones de la zapata", pero sobre todo la cantidad de acero así como el numero de varillas y esp.
 
 
 
