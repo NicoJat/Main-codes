@@ -9,8 +9,8 @@ Materia: Cimentaciones
 Profesor: Carlos Celi
 Tarea: numero 2
 
-Hasta la fecha los cambios efectuados han sido en cuanto al avance del diseño, se ha logrado obtener el Asmin, 
-el H y "las dimensiones de la zapata", pero sobre todo la cantidad de acero así como el numero de varillas y esp.
+Hasta la fecha los cambios efectuados han sido en cuanto al avance del diseno, se ha logrado obtener el Asmin, 
+el H y "las dimensiones de la zapata", pero sobre todo la cantidad de acero asi como el numero de varillas y esp.
 
 
 
