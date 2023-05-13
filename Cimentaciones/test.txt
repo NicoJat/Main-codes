@@ -9,39 +9,3 @@ Materia: Cimentaciones
 Profesor: Carlos Celi
 Tarea: numero 2
 
-Hasta la fecha los cambios efectuados han sido en cuanto al avance del diseno, se ha logrado obtener el Asmin, 
-el H y "las dimensiones de la zapata", pero sobre todo la cantidad de acero asi como el numero de varillas y esp.
-
-
-
-# qq = [0,199]
-# Cortantefin1 = [np.delete(Cortanteactual,qq)]
-# Cortantefin20111 = [np.delete(Cortante2011,qq)]
-# dval1 = np.delete(dval,qq)
-
-# Cortantefin = np.min([Cortantefin1])
-# Cortantefin2011 = np.min([Cortantefin20111])
-
-# #Graficador
-# fig, ax = plt.subplots()
-# ax.plot(dval, Cortanteactual, label='Cortante ACI 318-19')
-# # ax.plot(dval, Cortante2011)
-# ax.set_xlabel('valores de d')
-# ax.set_ylabel('phiVc')
-# ax.set_title('Curva relación d y Vc')
-# # ax.legend()
-
-# plt.show()
-# #Fin Graficador
-
-
-
-# print(f'Vu1 es: {Vu1mat[0]} Ton')  #En toneladas@m
-# print(f'Vu2 es: {Vu2mat[0]} Ton')  #En toneladas@m
-# print(f'phiVc1 es: {phiVc1mat[0]} Ton')  #En toneladas@m
-# print(f'phiVc2 es: {phiVc2mat[0]} Ton')  #En toneladas@m
-# print(f'phiVc3 es: {phiVc3mat[0]} Ton')  #En toneladas@m
-# print(f'phiVc2011 es: {phiVc2011mat[0]} Ton')  #En toneladas@m
-# print(f'phiVcmax es: {phiVcmaxmat[0]} Ton')  #En toneladas@m
-# print(f'La carga de diseño al cortante es:  {Cortanteactual[0]} Ton') #En toneladas@m
-# print(f'La carga de diseño al cortante, según la ACI 2011 es:  {Cortante2011[0]} Ton') #En toneladas@m
