@@ -1,0 +1,205 @@
+#...........................
+print('\nCalculo de valores de Pn & Mn')
+
+C=np.zeros(np.int0(41))
+Esi=np.zeros(np.int0(nc))
+fsi=np.zeros(np.int0(nc))
+Mnst=np.zeros(np.int0(nc))
+Mnsti=np.zeros(np.int0(41))
+Fsi=np.zeros(np.int0(41))
+ygac=np.zeros(np.int0(41))
+Pn=np.zeros(np.int0(41))
+Mn=np.zeros(np.int0(41))
+Mnphi=np.zeros(np.int0(41))
+Pnphi=np.zeros(np.int0(41))
+
+
+for i in range(1,41):
+    C[i]=i-1
+    a=beta1*C[i]
+
+    for u in range(1,nc):
+
+        if di[u]>a:
+            Es=Eu*((C[i]-di[u])/C[i])
+            fs=E*Es
+            if np.abs(fs)<fy:
+                fs=E*Es
+            else:
+                fs=fy*((np.abs(fs))/fs)
+
+            Esi[u]=Es
+            fsi[u]=fs*Ast[u]
+        else:
+            Es=Eu*((C[i]-di[u])/C[i])
+            fs=E*Es
+        
+            if np.abs(fs)<fy:
+                fs=E*Es
+            else:
+                fs=fy*((np.abs(fs))/fs)
+        
+            Esi[u]=Es
+            fsi[u]=(fs-(beta1*fc))*Ast[u]
+    
+        yg=h/2
+        Mnst[u]=(fsi[u]*(di[u]))/1000
+
+
+
+    if Esi[u]<Ey:
+        phi=0.65
+    elif Esi[u]>Ey and Esi[u]<=(Eu+Ey):
+        phi=0.65+(0.25*((Esi[u]-Ey)/Eu))
+    elif Esi[u]>=(Eu+Ey):
+        phi=0.9
+
+    ygac[i]=h/2
+    Mnsti[i]=np.sum(Mnst)
+    Fsi[i]=np.sum(fsi)
+
+
+    Pn[i]=(beta1*fc*(C[i]*b)+Fsi[i])/1000  #Ton
+    Pnphi[i]=phi*Pn[i]   #Ton
+    Mn[i]=(-((beta1*fc*(C[i]*b)*(a/2)))-Mnsti[i]+(Pn[i]*yg))/100000  #Ton*m
+    Mnphi[i]=phi*Mn[i]   #Ton*m
+
+Pn=pd.DataFrame(np.delete(Pn,0))
+Pnphi=pd.DataFrame(np.delete(Pnphi,0))
+Mn=pd.DataFrame(np.delete(Mn,0))
+Mnphi=pd.DataFrame(np.delete(Mnphi,0))
+
+Pn1=np.append(Pn,[P0])
+Mn1=np.append(Mn,[M0])
+
+#------------------------------------------------
+#................................................
+print('\nCalculo de valores de Pn & Mn')
+
+C=np.zeros(np.int0(41))
+Esi=np.zeros(np.int0(nc))
+fsi=np.zeros(np.int0(nc))
+Mnst=np.zeros(np.int0(nc))
+Mnsti=np.zeros(np.int0(41))
+Fsi=np.zeros(np.int0(41))
+ygac=np.zeros(np.int0(41))
+Pn=np.zeros(np.int0(41))
+Mn=np.zeros(np.int0(41))
+Mnphi=np.zeros(np.int0(41))
+Pnphi=np.zeros(np.int0(41))
+
+
+for i in range(1,41):
+    C[i]=i-1
+    a=beta1*C[i]
+
+    for u in range(1,nc):
+
+        if di[u]>a:
+            Es=Eu*((C[i]-di[u])/C[i])
+            fs=E*Es
+            if np.abs(fs)<fy:
+                fs=E*Es
+            else:
+                fs=fy*((np.abs(fs))/fs)
+
+            Esi[u]=Es
+            fsi[u]=fs*Ast[u]
+        else:
+            Es=Eu*((C[i]-di[u])/C[i])
+            fs=E*Es
+        
+            if np.abs(fs)<fy:
+                fs=E*Es
+            else:
+                fs=fy*((np.abs(fs))/fs)
+        
+            Esi[u]=Es
+            fsi[u]=(fs-(beta1*fc))*Ast[u]
+    
+        yg=h/2
+        Mnst[u]=(fsi[u]*(di[u]))/1000
+
+
+
+    if Esi[u]<Ey:
+        phi=0.65
+    elif Esi[u]>Ey and Esi[u]<=(Eu+Ey):
+        phi=0.65+(0.25*((Esi[u]-Ey)/Eu))
+    elif Esi[u]>=(Eu+Ey):
+        phi=0.9
+
+    ygac[i]=h/2
+    Mnsti[i]=np.sum(Mnst)
+    Fsi[i]=np.sum(fsi)
+
+
+    Pn[i]=(beta1*fc*(C[i]*b)+Fsi[i])/1000  #Ton
+    Pnphi[i]=phi*Pn[i]   #Ton
+    Mn[i]=(-((beta1*fc*(C[i]*b)*(a/2)))-Mnsti[i]+(Pn[i]*yg))/100000  #Ton*m
+    Mnphi[i]=phi*Mn[i]   #Ton*m
+
+Pn=pd.DataFrame(np.delete(Pn,0))
+Pnphi=pd.DataFrame(np.delete(Pnphi,0))
+Mn=pd.DataFrame(np.delete(Mn,0))
+Mnphi=pd.DataFrame(np.delete(Mnphi,0))
+
+Pn1=np.append(Pn,[P0])
+Mn1=np.append(Mn,[M0])
+#--------------------------------------------------------------------------------
+
+
+
+Pnphi1=np.append(Pnphi,[0.8*0.65*P0])
+Pnphi2=np.append(-Pnphi,[0.8*0.65*P0])
+Mnphi1=np.append(Mnphi,[0.8*0.65*M0])
+Mnphi2=np.append(-Mnphi,[0.8*0.65*M0])
+#FIN obtencion de valores Pn y Mn
+
+# #Importacion de datos dde excel
+# tbmommax=pd.read_excel(r'C:\Users\USUARIO\Documents\Nico\hormigon II\Momentomax1.xlsx', sheet_name='Hoja1')
+# tbmommin=pd.read_excel(r'C:\Users\USUARIO\Documents\Nico\hormigon II\momentomin.xlsx', sheet_name='Hoja1')
+# print('Momentos maximos de la columna: ',tbmommax)
+# print('Momentos minimos de la columna: ',tbmommin)
+# tbmx=pd.DataFrame(tbmommin)
+# tbmm=pd.DataFrame(tbmommax)
+# momax=tbmx.to_numpy()
+# momin=tbmm.to_numpy()
+# #FIN importacion
+
+
+#Graficador
+sns.set_style('darkgrid')
+fig, ax = plt.subplots(figsize=(6, 6))
+
+ax.plot(Mn1, Pn1, '-', color='blue')
+ax.plot(M1, Pn1, '-', color='blue')
+ax.plot(Mnphi1, Pnphi1, '-', color='red')
+ax.plot(Mnphi2, Pnphi1, '-', color='red')
+ax.plot(Mb, Pb, '-o')
+#ax.scatter(momax[:,0], momax[:,1])
+#ax.scatter(momin[:,0], momin[:,1])
+
+ax.set_xlabel('Momento (M, Ton.m)')
+ax.set_ylabel('Carga Axial (P, Ton)')
+
+plt.title('Diagrama de interacción de columna rectangular')
+plt.show()
+print('Programa finalizado')
+#Fin graficador
+#Fin programa
+
+'''
+Importante considerar que unicamente aplica para columnas rectangulares
+cuyo eje neutro sea paralelo a la base. Caso contrario debe modificarse el loop 
+tomando un numero de iteraciones correspondiente a la longitud de la base.
+'''
+
+print('\nValores de Pn son: ')
+display(Pn)
+# print('Valores de Pnphi son: ')
+# display(Pnphi)
+print('Valores de Mn son: ')
+display(Mn)
+# print('Valores de Mnphi son: ')
+# display(Mnphi)
