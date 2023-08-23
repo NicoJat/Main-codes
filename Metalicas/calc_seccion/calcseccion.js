@@ -89,7 +89,7 @@ function seccionl() {
     let e1l = parseFloat(document.getElementById('e1l').value);
     let e2l = parseFloat(document.getElementById('e2l').value);
 
-    let area = ((a1l)*(e2l))+((a1l)*(e2l))
+    let area = ((a1l)*(e1l))+((a2l)*(e2l))
     let centroidxl = ((e1l/2*a1l*e1l)+(a2l/2*e2l*a2l))/area
     let centroidyl = (((e2l+(a1l/2))*a1l*e1l)+((e2l/2)*a2l*e2l))/area
     let inerciaxl = (((e1l*(a1l**3)/12))+(a1l*e1l*Math.abs((((a1l/2)-centroidyl)**2)))) + ((a2l*(e2l**3)/12)+(a2l*e2l*Math.abs((centroidyl-(e2l/2))**2)))
@@ -131,8 +131,8 @@ function seccioncuad() {
     let area = (a2cuad*b2cuad)-(a1cuad*b1cuad)
     let centroidxcuad = b2cuad/2
     let centroidycuad = a2cuad/2
-    let inerciaxcuad = ((b2cuad*(a2cuad*3))/12)-((b1cuad*(a1cuad*3))/12)
-    let inerciaycuad = ((a2cuad*(b2cuad*3))/12)-((a1cuad*(b1cuad*3))/12)
+    let inerciaxcuad = ((b2cuad*(a2cuad**3))/12)-((b1cuad*(a1cuad**3))/12)
+    let inerciaycuad = ((a2cuad*(b2cuad**3))/12)-((a1cuad*(b1cuad**3))/12)
     let inerciapcuad = inerciaxcuad + inerciaycuad
     let rxcuad = Math.sqrt(inerciaxcuad/area)
     let rycuad = Math.sqrt(inerciaycuad/area)
