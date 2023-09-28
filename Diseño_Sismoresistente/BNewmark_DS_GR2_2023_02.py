@@ -31,4 +31,6 @@ class BNewmark_DS_GR2_2023_02:
             xvn1[i] = xvn1[i-1] + (delta*(0.5*(xan1[i-1] + xan1[i])))
             xan1[i] = (1/(self.m+(2*self.zi*self.w*delta*0.5*self.m)))*((-self.Sg2[i,1]*self.m) - (Kp*xn1[i]) - ((2*self.zi*self.w*self.m)*(xvn1[i-1]+(delta*0.5*xan1[i-1]))))
 
-        return xn1, xvn1, xan1
+        Sa_max = np.max(np.abs(xan1))
+
+        return xn1, xvn1, xan1, Sa_max
