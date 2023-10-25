@@ -78,5 +78,5 @@ def K_M(num_col, H, E, tipo, I, vector, m, coef_castigo):
         K[len(k)-1,len(k)-1] = k[len(H)-1]
         j+=1
 
-    return K, M
+    return K, M, k
     
