@@ -38,24 +38,27 @@ def Spec_NEC(n, z, fa, fd, fs, r, I, R, fip, fie):
     Tl = 2.4*fd
 
     j = 0
-    Spec = []
-    SpecI = []
+    Spec1 = []
+    SpecI1 = []
     Tmp = []
     for T in np.arange(0,Tl,0.01):
         if T <= To:
             Tmp.append(T)
-            Spec.append(z*fa*(1 + ((n-1)*(T/To))))
-            SpecI.append(n*z*fa/(R*fip*fie))
+            Spec1.append(z*fa*(1 + ((n-1)*(T/To))))
+            SpecI1.append(n*z*fa/(R*fip*fie))
         elif T > To and T < Tc:
             Tmp.append(T)
-            Spec.append(n*z*fa)
-            SpecI.append(n*z*fa/(R*fip*fie))
+            Spec1.append(n*z*fa)
+            SpecI1.append(n*z*fa/(R*fip*fie))
         else:
             Tmp.append(T)
-            Spec.append(n*z*fa*((Tc/T)**r))
-            SpecI.append(n*z*fa*((Tc/T)**r)/(R*fip*fie))
+            Spec1.append(n*z*fa*((Tc/T)**r))
+            SpecI1.append(n*z*fa*((Tc/T)**r)/(R*fip*fie))
         
         j+=1
+
+    Spec = np.column_stack((Spec1,Tmp))
+    SpecI = np.column_stack((SpecI1,Tmp))
 
     return Spec, SpecI, Tmp
 
@@ -107,6 +110,8 @@ def Spec_ASCE7(Tl, Fa, Fv, Ss, S1, limite):
             Tmp.append(T)        
             Spec_ASCE.append((Sd1*Tl)/(T**2))    
         j+=1
+
+    Spec_ASCE = np.column_stack((Spec_ASCE,Tmp))
 
     return Spec_ASCE, Tmp
 
