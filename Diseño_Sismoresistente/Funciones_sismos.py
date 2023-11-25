@@ -32,10 +32,10 @@ def BNewmarkJr(Sg2,zi,T,m,w):
 '''
 Espesctro Respuesta de la NEC
 '''
-def Spec_NEC(n, z, fa, fd, fs, r, I, R, fip, fie):
+def Spec_NEC(n, z, fa, fd, fs, r, I, R, fip, fie, scale):
     To = 0.1*fs*(fd/fa)
     Tc = 0.55*fs*(fd/fa)
-    Tl = 2.4*fd
+    Tl = 2.4*fd*scale
 
     j = 0
     Spec1 = []
@@ -57,8 +57,8 @@ def Spec_NEC(n, z, fa, fd, fs, r, I, R, fip, fie):
         
         j+=1
 
-    Spec = np.column_stack((Spec1,Tmp))
-    SpecI = np.column_stack((SpecI1,Tmp))
+    Spec = np.column_stack((Tmp,Spec1))
+    SpecI = np.column_stack((Tmp,SpecI1))
 
     return Spec, SpecI, Tmp
 
@@ -111,7 +111,7 @@ def Spec_ASCE7(Tl, Fa, Fv, Ss, S1, limite):
             Spec_ASCE.append((Sd1*Tl)/(T**2))    
         j+=1
 
-    Spec_ASCE = np.column_stack((Spec_ASCE,Tmp))
+    Spec_ASCE = np.column_stack((Tmp,Spec_ASCE))
 
     return Spec_ASCE, Tmp
 
