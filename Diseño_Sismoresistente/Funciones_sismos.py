@@ -44,15 +44,15 @@ def Spec_NEC(n, z, fa, fd, fs, r, I, R, fip, fie, scale):
     for T in np.arange(0,Tl,0.01):
         if T <= To:
             Tmp.append(T)
-            Spec1.append(z*fa*(1 + ((n-1)*(T/To))))
+            Spec1.append(z*fa*(1 + ((n-1)*(T/To)))*I)
             SpecI1.append(n*z*fa/(R*fip*fie))
         elif T > To and T < Tc:
             Tmp.append(T)
-            Spec1.append(n*z*fa)
+            Spec1.append(n*z*fa*I)
             SpecI1.append(n*z*fa/(R*fip*fie))
         else:
             Tmp.append(T)
-            Spec1.append(n*z*fa*((Tc/T)**r))
+            Spec1.append(n*z*fa*((Tc/T)**r)*I)
             SpecI1.append(n*z*fa*((Tc/T)**r)/(R*fip*fie))
         
         j+=1
